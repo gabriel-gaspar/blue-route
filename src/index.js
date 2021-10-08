@@ -1,0 +1,14 @@
+
+const express = require('express');
+const routes = require('./routes');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(routes);   
+
+console.log("Listening on port 3000")
+const PORT = process.env.PORT || 3000;
+const HOST = '0.0.0.0';
+app.listen(PORT, HOST);
